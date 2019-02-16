@@ -1,0 +1,120 @@
+qt概述：
+qt的跨平台性很好，一份代码，可以通过不同的编译器编译，运行
+Qt面向对象做的很好
+qt的两个亮点：
+ui设计工具 信号与槽
+版本5.1.2
+没有环境则需要加载.dll来充当环境
+qt下载---------
+http://download.qt.io/
+official_releases/
+qt/
+5.12/
+5.12.1/
+qt-opensource-windows-x86-5.12.1.exe Windows版
+qt-opensource-linux-x64-5.12.1.run Linux版
+-----
+安装组件选择：
+MSVC 2015 64-bit    vs2015编译器
+MinGW               Windows仿照linux gcc编译器
+Qt WebEngine        Web引擎
+TOOLS下面勾上：MinGW 编译器
+
+创建项目：
+选择界面编程
+编译器选择MinGW
+目前基类选择Dialog 对话框模式
+
+运行为只编译不调试run
+构建为编译build
+设计：
+forms里面的dialog.ui 为设计界面
+在设计界面添加控件
+edit signals关联控件动作
+edit widgets退出动作关联
+点击运行即可看到设计好的界面
+
+--------
+使用qt_quick_creat--qml
+选择MinGW编译器
+设计：
+点击main.qml 
+点击--设计 --进行ui的界面设计
+构建步骤里面：
+mingw32-make.exe -j6 in D:\qt_code\quick_creat1\build-quick_test1-Desktop_Qt_5_12_1_MinGW_64_bit-Debug  
+表示默认使用多线程编译 -j6表示使用6核多线程进行编译  通过右键我的电脑--管理--设备管理器--处理器可以看到
+
+-------
+假如不小心关掉了项目界面怎么办？
+点击--控件--show left side bar
+
+----linux qt5的安装方法 
+如果已经有了qt需要删除或升级输入
+apt-get autoremove qtcreator
+apt-get update
+安装qt
+sudo apt-get install qt5-default qtcreator  (阿里源，可以把相关的依赖库down进来)
+qmake -v 查看qt版本
+
+
+------
+使用qt创建第一个demo
+基类：QMainWindow
+目标：写一个日历
+点击forms mainWindow.ui 进入设计界面
+在display widgets选项下面找到日历  calendar widget
+添加label 在旁边的标签属性中设置font
+Windows tital 修改窗口类名
+--------
+右键项目名称可以设置为活动项目
+------
+
+
+其他qt程序：在开始菜单中
+assistant  帮助文档
+designer 创建.ui文件 进行ui设计(.xml文件)
+linguist 进行界面语言转换
+qt(cmd) 搭载qt环境的终端
+
+-------------发布qt程序
+先设置为release版本
+在release版本中运行.exe 报错是因为没有环境变量 
+在我的电脑里面导入环境变量 F:\Qt\5.12.1\mingw73_64\bin  右键我的电脑 属性--高级系统设置--环境变量...
+点击系统变量里面的path  新建环境变量 F:\Qt\5.12.1\mingw73_64\bin
+这样就可以在release版本双击运行了
+
+移植：
+当移植到其他电脑时没有环境，则需要加载.dll来充当环境
+使用windeployqt进行打包，创建.dll
+方法：
+1.进入qt控制台
+2.进到release程序所在目录
+3.输入d： 先进入d盘
+4.输入 cd D:\qt_code\build-first_demo-Desktop_Qt_5_12_1_MinGW_64_bit-Release\release
+5.输入 windeployqt first_demo.exe(release程序名)  ----自动链接依赖，相当好用
+6.出去.o文件其他release文件夹下的所有文件拷贝到目标机器就可以运行
+
+-----------
+不同程序语言的跨平台性：
+Qt跨平台：一份代码，多处编译，多处运行；   
+Java跨平台：每一种平台上跑了一款虚拟机，所有程序跑在这个虚拟机上面   
+Python跨平台：每个平台上都有一个Python解析器，先运行解析器在解析代码；   
+Web跨平台：BS架构，程序跑在服务器上的，客户端通过浏览器查看运行；(可以在电脑、手机、平板上..看网页)
+
+在Windows上编译出来的qt.exe不能再linux上运行(.elf)需要在linux上在编译生成一遍
+linux上使用file 文件名可以查看文件属性
+将first_demo下面的所有程序源码拷贝至linux文件夹下 运行qmake first_demo.pro (使用qmake可以自动生成makefile文件)然后运行make  可以生成.elf可执行文件(make -j4执行多线程编译)
+linux下面是.so为动态库 window下面是.dll 
+
+------其他知识
+ARM/x86架构（cpu架构体系）的电脑 
+cmake qmake ：快速生成makefile  待研究
+有空让老师演示一下cmake
+qmake演示：
+qmake -makefile就可以得到makefile文件
+gedit 可以查看makefile文件
+------代码行创建qt project
+touch 文件名   功能：创建文件
+qmake -project 创建project
+qmake -makefile 生成makefile文件
+make 编译链接
