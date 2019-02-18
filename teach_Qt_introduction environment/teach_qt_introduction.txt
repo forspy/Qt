@@ -118,3 +118,6 @@ touch 文件名   功能：创建文件
 qmake -project 创建project
 qmake -makefile 生成makefile文件
 make 编译链接
+
+demo路径
+F:\Qt\Examples\Qt-5.12.1\network\http
