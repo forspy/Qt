@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>picture/pat.bmp</file>
+        <file>picture/1.ico</file>
+    </qresource>
+</RCC>

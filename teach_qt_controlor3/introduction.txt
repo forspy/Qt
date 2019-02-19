@@ -1,0 +1,49 @@
+设置pushButton的点击状态
+1.需要在mainwindow.h里面设置一个bool 值用来判定点击状态
+
+private:
+    Ui::MainWindow *ui;
+    bool deviceState;//设备连接状态
+	
+2.在MainWindow的构造函数中初始化状态
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow),
+    deviceState(false) //初始化状态
+	
+3.槽函数设置
+void MainWindow::on_pushButton_clicked()
+{
+   if(!deviceState)//
+   {
+       ui->pushButton->setText("断开");
+       deviceState=true;
+   }
+   else {
+       ui->pushButton->setText("关闭");
+       deviceState=false;
+   }
+}
+
+toolbutton加载图片
+1.将图片文件夹复制到main.cpp同一目录下，右键项目 --添加新文件  ，选择Qt-Qt Resource File，名称随意resource
+2.看到项目下生成了一个resources文件夹，选中resources.qrc 选择添加前缀 /image，选择添加文件 ...
+3.插入几个菜单，修改一下菜单名actionSave，构建一下以后可以发现资源 选中图标后面的toolbutton加载图片
+4.[可选]将修改好的菜单拉入toolbar中，注意手法
+
+对于工具栏中的按钮添加信号与槽函数
+1.右键actionSave()---转到槽---选择信号 triggered() 在mainwindow.cpp中出现代码
+2.[可选]选择调试接口 加载头文件 #include <QDebug>
+位置mainwindow.h
+#include <QMainWindow>
+#include <QDebug>
+3.槽函数的编写
+void MainWindow::on_actionSave_triggered()
+{
+    qDebug()<<"action open"<<"triggered";//字符串流入
+}
+点击则在qt界面出现action open triggered
+
+应用程序窗口图标
+1.选择项目里的teach_qt_controlor3.pro   选中resourec里面的图片 写入RESOURCES +=./image/picture/pat.bmp   //注意这里只支持.ico文件作为图标，所以不行
+2.选中resource中的picture文件 点击添加现有文件  teach_qt_controlor3.pro里面 RC_ICONS +=./picture/1.ico 通过
