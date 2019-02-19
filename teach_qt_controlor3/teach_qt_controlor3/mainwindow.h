@@ -20,6 +20,18 @@ private slots:
 
     void on_actionSave_triggered();
 
+    void on_checkBox_clicked();
+
+    void on_checkBox_2_clicked();
+
+    void on_checkBox_3_clicked();
+
+    void on_checkBox_4_clicked();
+
+    void on_checkBox_clicked(bool checked);
+
+    void on_checkBox_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     bool deviceState;//设备连接状态

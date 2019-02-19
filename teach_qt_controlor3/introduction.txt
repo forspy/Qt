@@ -47,3 +47,32 @@ void MainWindow::on_actionSave_triggered()
 应用程序窗口图标
 1.选择项目里的teach_qt_controlor3.pro   选中resourec里面的图片 写入RESOURCES +=./image/picture/pat.bmp   //注意这里只支持.ico文件作为图标，所以不行
 2.选中resource中的picture文件 点击添加现有文件  teach_qt_controlor3.pro里面 RC_ICONS +=./picture/1.ico 通过
+
+改变pushbutton的样式
+方法一：
+1.右键点击控件--改变样式表
+2.添加资源--border-image 
+方法二：
+ui->setupUi(this);
+ui->pushButton_2->setIcon(QIcon(":/image/picture/pat.bmp"));//选中resourec里面的图片右键copypath(不推荐)
+
+radio button单选框
+形成组：
+方法一：
+containers里面的group box  里面放radio button单选框可形成组
+方法二：
+批量选中要形成组的按钮   右键指定到按钮组--新建按钮组
+
+实例：需求在四个复选框中要求最多只能选三个
+int count;//创建一个全局变量 用于计数
+void MainWindow::on_checkBox_clicked()
+{
+    if(count<=2&&ui->checkBox->isChecked()==true)//判断计数器是否<=2，并且是否被打勾
+        count++;
+    else if(ui->checkBox->isChecked()==false)//取消打勾则计数器--
+        count--;
+    else
+    {
+        ui->checkBox->setChecked(false);//计数器大于等于3则设置为不能被打勾，状态始终为false
+    }
+}
