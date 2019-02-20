@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->pushButton_2->setIcon(QIcon(":/image/picture/pat.bmp"));//选中resourec里面的图片右键copypath(不推荐)
+    ui->comboBox->addItem("大亨");
 }
 
 MainWindow::~MainWindow()
@@ -78,3 +79,23 @@ void MainWindow::on_checkBox_4_clicked()
     }
 }
 
+
+void MainWindow::on_comboBox_currentIndexChanged(int index)
+{
+    QString jieji;
+    switch (index) {
+    case 0:
+        jieji="呵呵";
+        break;
+    case 1:
+        jieji="牛逼";
+        break;
+    case 2:
+        jieji="可以";
+        break;
+    case 3:
+        jieji=QString("大佬")+QString("交个朋友吧！");
+        break;
+    }
+    QMessageBox::information(this,"你的财务",jieji);
+}

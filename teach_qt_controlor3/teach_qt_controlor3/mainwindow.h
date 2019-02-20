@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDebug>//用于槽函数on_actionSave_triggered()的触发
+#include<QMessageBox>
 namespace Ui {
 class MainWindow;
 }
@@ -31,6 +32,8 @@ private slots:
     void on_checkBox_clicked(bool checked);
 
     void on_checkBox_stateChanged(int arg1);
+
+    void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;

@@ -76,3 +76,47 @@ void MainWindow::on_checkBox_clicked()
         ui->checkBox->setChecked(false);//计数器大于等于3则设置为不能被打勾，状态始终为false
     }
 }
+
+combo box下拉列表的使用
+方式1：
+双击---新建项目
+方式2：
+ui->comboBox->addItem("大亨");
+
+下拉列表槽函数实现：
+右键--转到槽--currentIndexChanged(int)
+void MainWindow::on_comboBox_currentIndexChanged(int index)
+{
+    QString jieji;
+    switch (index) {
+    case 0:
+        jieji="呵呵";
+        break;
+    case 1:
+        jieji="牛逼";
+        break;
+    case 2:
+        jieji="可以";
+        break;
+    case 3:
+        jieji=QString("大佬")+QString("交个朋友吧！");
+        break;
+    }
+    QMessageBox::information(this,"你的财务",jieji);
+}
+需要在mainwindow.h里面弹一个对话框
+#include<QMessageBox>
+
+取消控件的槽函数和信号绑定怎么做？待解决  编译的时候在moc_XXX.cpp中还有这个槽函数，并没有更新
+moc_mainwindow.cpp里面
+case 6: _t->on_checkBox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+case 7: _t->on_checkBox_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+
+line Edit单行文本框
+Qt里面的继承关系很明了：看控件属性的继承关系即可，从上往下为基类到派生类
+图形操作界面：
+inputMask:000.000.000.000  DNS样式
+frame属性：去掉边框
+echomode：Password 密码模式
+placeholdertext：先置文字
+Textlabel文本标签控件 配合line Edit单行文本框
