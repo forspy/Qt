@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>picture/pat.bmp</file>
+        <file>picture/mua.gif</file>
+    </qresource>
+</RCC>
