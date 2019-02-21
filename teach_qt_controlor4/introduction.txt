@@ -1,0 +1,113 @@
+1.代码加载图片
+	1.1添加资源 见test_qt_controlor
+	1.2加载图片
+		1.2.1修改textlabel的对象名称label为labelImage
+		代码：
+	ui->setupUi(this);
+    QPixmap mImage=QPixmap(":/image/picture/pat.bmp");//设置图片路径
+    ui->labelImage->setPixmap(mImage);//加载图片
+    ui->labelImage->resize(320,240);//设置图片大小
+    ui->labelImage->setScaledContents(true);//图片自适应大小
+
+2.界面加载图片方式
+	2.1添加一个textlabel
+	2.2 在QLabel类属性下 选择pixmap ... 加载资源图片
+	2.3 钩中ScaledContents，图片自适应大小
+	
+3.代码加载gif
+	3.1 创建对象指针 QMovie *pMove  ，mainwindow.h 里面#include<QMovie>  注：可以右键切换头文件/源文件
+	代码：
+	QMovie *pMove=new QMovie(":/image/picture/mua.gif");//创建QMovie空间,详见帮助文档
+    ui->labelGif->setMovie(pMove);
+    ui->labelGif->setFixedSize(320,240);
+    pMove->start();
+	
+4.Qtextedit
+The QTextEdit class provides a widget that is used to edit and display both plain(普通文本) and rich text.
+其中rich text是指RTF富文本格式：当量、文本、连接、高亮显示等
+	4.1双击Text Edit可以出现编辑HTML对话框  待解决
+
+5.spin box/double spin box
+	5.1spinbox加速步进 在QAbstractSpinbox 类的accelerated 勾选
+	5.2 增加范围 ，在Qspinbox类中的maximum 中修改
+	5.3 步长 在Qspinbox类中的singlestep中修改
+	5.4 增加前缀/后缀 在Qspinbox类中 suffix/prefix
+	5.5 设置精度 在Qdoublespinbox中的decimals中设置
+	
+6.slider 关联与取消
+	6.1桥接方式的取消
+	f3模式下选择桥接，取消
+	
+7.textBrowser 
+	与Qtextedit 配合形成输入输出
+	代码：
+	void MainWindow::on_pushButton_clicked()//与Qtextedit 配合形成输入输出
+{
+    QString textStr=ui->textEdit_2->toHtml();
+    QString textPlainStr=ui->textEdit_2->toPlainText();
+
+    ui->textBrowser->setText(textStr);
+}
+转到槽函数取消，待解决
+
+8.LCD number
+	8.1需要在头文件中加载
+	#include<QTime>
+	#include<QDateTime>
+	#include<QtDebug>
+	8.2实现时间的显示
+	//计时器  需要在QLCDNumber类的digitCount 里面设置8位以上
+    QTime time=QTime::currentTime();
+    //QDateTime::currentDateTime();//另外的时间获取方式
+    //QDateTime::currentDateTimeUtc();//UTC格林威治时间
+    qDebug()<<time;//debug打印时间
+    //显示时间
+    ui->lcdNumber_2->display(time.toString("hh:mm:ss"));//帮助文档查看QTime
+	8.3实现定时器设置，即到了某个时间停住，触发一个槽函数
+	#include<QTimer>//定时器
+	这里介绍一种在类里面定义新对象的方法
+	在mainwindow.h函数下
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_pushButton_clicked();
+
+private:
+    Ui::MainWindow *ui;
+    QTimer timer;//新加成员变量
+};
+
+	因为是一个构造函数
+	MainWindow::MainWindow(QWidget *parent) ://注意这是一个构造函数
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+	{
+	ui->setupUi(this);
+	}
+	8.4//让定时器跑起来
+	connect连接信号和槽函数
+		8.4.1在头文件中先定义一个信号成员
+		private slots:
+		void timeoutSlot();
+		右键在mainwindow.cpp中添加定义
+		槽函数中实现
+		void MainWindow::timeoutSlot()
+{
+    //qDebug()<<"timeout"<<QTime::currentTime();//尝试在debug区先看看
+    ui->lcdNumber_2->display(QTime::currentTime().toString("hh:mm:ss"));
+}
+		8.4.2 让定时器跑起来 使用connect让信号和槽函数绑定
+		timer.start(1000);//1秒钟一次
+    //让定时器跑起来 使用connect让信号和槽函数绑定
+    connect(&timer,&QTimer::timeout,
+            this,&MainWindow::timeoutSlot);
+
+9.progress bar 安装进度条
+	9.1显示百分比位置可以在alignment里面设置
+	9.2
