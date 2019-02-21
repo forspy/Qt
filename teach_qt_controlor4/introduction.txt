@@ -110,4 +110,10 @@ private:
 
 9.progress bar 安装进度条
 	9.1显示百分比位置可以在alignment里面设置
-	9.2
+	9.2文件传输
+	 ui->progressBar->setValue(10);//设置百分比
+    //例子：文件传输
+    int total=100;
+    int current=12;
+    ui->progressBar->setMaximum(total);
+    ui->progressBar->setValue(current);
