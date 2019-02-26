@@ -1,0 +1,31 @@
+基于item
+1.toolbox 列表栏
+	1.1contain--toolbox--右键--插入页
+	类似于QQ我的好友列表展开
+	1.2.可以在每一页插入东西 比如插入pushbuttton
+
+2.tab widget --标签栏
+	2.1右键--插入页
+	2.2 tabposition改变位置
+
+3.stacked widget
+	3.1切换页面
+	
+4.Dock widget--可移动栏（悬浮窗）
+	搜官网Dock
+5.axWidget  Active控件  不能跨平台
+	可以通过axWidget做pdf浏览器
+	需要装adobe pdf浏览器
+
+6.列和表
+	listWidget TreeWidget TableWidget(有点像excel)在数据结构里
+面会细讲
+
+布局管理
+7.在ui设计界面有布局管理工具
+	7.1水平布局和垂直布局
+	
+	7.2按ctrl +拖动可以实现复制
+	7.3布局后的控件会形成一类
+	
+8.选中窗体进行布局之后会出现layout类属性
