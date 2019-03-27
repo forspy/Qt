@@ -1,0 +1,4 @@
+登陆界面LoginDemo
+采用的基类是QDialog
+.qss样式表文件：样式表就是各种控件的衣服
+E:\tanzhou\TZKT\resources\ui\qss\login_widget_ui
