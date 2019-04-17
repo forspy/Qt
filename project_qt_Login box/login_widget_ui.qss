@@ -1,0 +1,378 @@
+
+QWidget#wdLoginFrom{
+  border-image: url(./resources/ui/skin/12anniversary/dlbg.png);
+}
+#lbLog
+{
+  image: url(./resources/ui/skin/LoginPic/logo.png);
+}
+#lbAccountCode,#lbPhoneCode
+{
+	background-color: rgb(255, 255, 255);
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+	padding-left:4px;
+}
+#btnAccountRefurbish,#btnPhoneRefurbish
+{
+	background-color: rgb(255, 255, 255);
+	border:none;
+	image: url(./resources/ui/skin/LoginPic/d_default.png);
+	border-top-right-radius:4px;
+	border-bottom-right-radius:4px;
+}
+#btnAccountRefurbish:pressed,btnPhoneRefurbish:pressed
+{
+	border:none;
+	image: url(./resources/ui/skin/LoginPic/d__hover.png);
+}
+QPushButton#btnMin
+{
+	border:none;
+	image: url(./resources/ui/skin/LoginPic/zxh.png);
+}
+QPushButton#btnMin:hover
+{
+	background-color: #3e72cb;
+}
+QPushButton#btnQuit
+{
+	border:none;
+	image: url(./resources/ui/skin/LoginPic/shut.png);
+}
+QPushButton#btnQuit:hover
+{
+	background-color:#f57575;
+}
+#btnWebo
+{
+	border:none;
+	image: url(./resources/ui/skin/12anniversary/wb_default.png);
+    border-radius: 11px;
+}
+#btnWebo:hover
+{
+	image: url(./resources/ui/skin/12anniversary/wb_hover.png);
+}
+#btnQQ
+{
+border:none;
+image: url(./resources/ui/skin/12anniversary/qq_default.png);
+border-radius: 11px;
+
+}
+#btnQQ:hover
+{
+image: url(./resources/ui/skin/12anniversary/qq_hover.png);
+}
+#btnRegister
+{
+	border:none;
+  color: #ffffff;
+ text-decoration: underline;
+}
+#btnWechat
+{
+border:none;
+image: url(./resources/ui/skin/12anniversary/wx_default.png);
+  border-radius: 11px;
+}
+#btnWechat:hover
+{
+image: url(./resources/ui/skin/12anniversary/wx_hover.png);
+}
+#lbOhter
+{
+  color: #ffffff;
+}
+#label
+{
+  width: 65px;
+  height: 14px;
+  color: #ffffff;
+}
+QStackedWidget#stackedWidget
+{
+background-color: transparent;
+}
+QTabWidge#tabWidget{
+border:none;
+}
+
+QTabBar::tab {
+border: none;
+width:110px;
+height:30px; 
+}
+QTabBar::tab:selected{ color: #ffffff;border-bottom:2px solid #43c052;out-line:none;}
+QTabBar::tab:!selected { color: rgba(255, 255, 255, 0.5);out-line:none;}
+QTabWidget:pane {border-top:0px solid #e8f3f9;background:  transparent; out-line:none;}
+
+QPushButton#btnPhone,QPushButton#btnAccount
+{
+	border: none;
+	color:white;
+}
+QPushButton#btnPhone:checked,QPushButton#btnAccount:checked
+{
+	color: #ffffff;
+	border-bottom:2px solid #43c052;
+}
+
+QStackedWidget#page_phoneLogin,QStackedWidget#page_account_Login
+{
+	background:transparent;
+}
+
+QScrollBar:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    padding-top:9px;  
+    padding-bottom:9px;
+}
+QScrollBar::handle:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,25%);
+    border-radius:4px;   
+    min-height:20;
+}
+QScrollBar::handle:vertical:hover
+{
+    width:8px;
+    background:rgba(0,0,0,50%);   
+    border-radius:4px;
+    min-height:20;
+}
+QScrollBar::add-line:vertical   
+{
+    height:9px;width:8px;
+    border-image:url(:/images/a/3.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical   
+{
+    height:9px;width:8px;
+    border-image:url(:/images/a/1.png);
+    subcontrol-position:top;
+}
+QScrollBar::add-line:vertical:hover   
+{
+    height:9px;width:8px;
+    border-image:url(:/images/a/4.png);
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical:hover  
+{
+    height:9px;width:8px;
+    border-image:url(:/images/a/2.png);
+    subcontrol-position:top;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical   
+{
+    background:rgba(0,0,0,10%);
+    border-radius:4px;
+}
+QLineEdit#leCode_2{
+  text-align: left;
+  color: #1f2328;
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding-left:9px
+}
+QPushButton#btnSearch{
+	border-right:1px solid #d6dad6;
+	border-top:none;
+	border-left:none;
+	border-bottom:none;
+	
+	image: url(./resources/ui/skin/LoginPic/sanjiaox_default.png);
+	background-color:#ffffff;
+}
+QPushButton#btnSearch:hover{
+	
+	
+	image: url(./resources/ui/skin/LoginPic/sanjiaox_hover.png);
+}
+QPushButton#btnSearch:pressed{
+	
+	
+	image: url(./resources/ui/skin/LoginPic/sabjiax_press.png);
+}
+QLineEdit#leCode_2{
+  text-align: left;
+  color: #1f2328;
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding-left:9px
+}
+QPushButton#btnSearch{
+	border-right:1px solid #d6dad6;
+	border-top:none;
+	border-left:none;
+	border-bottom:none;
+	image: url(./resources/ui/skin/LoginPic/sanjiaox_default.png);
+	background-color:#ffffff;
+}
+QPushButton#btnSearch:hover{
+	image: url(./resources/ui/skin/LoginPic/sanjiaox_hover.png);
+}
+QPushButton#btnSearch:pressed{
+	image: url(./resources/ui/skin/LoginPic/sabjiax_press.png);
+}
+#lePhone
+{
+  border:none;
+  background-color: #ffffff;
+  color: #1f2328;
+  padding-left:8px;
+  padding-bottom:2px;
+border-top-right-radius:4px;
+border-bottom-right-radius:4px;
+}
+#leCode
+{
+  border:none;
+  background-color: #ffffff;
+  color: #1f2328;
+padding:8px;
+border-radius: 4px;
+}
+#lePhoneImgCodeText,#leAccountImgCodeText
+{
+  border:none;
+  background-color: #ffffff;
+  font-family: Microsoft YaHei;
+  font-size: 12px;
+  color: #1f2328;
+border-radius:4px;
+padding:8px;
+}
+
+
+#lePhoenCode
+{
+  border:none;
+  background-color: #ffffff;
+  color: #1f2328;padding:8px;border-radius: 4px;
+}
+#btnPhoneCode
+{
+	border-radius: 4px;
+  border-image: url(./resources/ui/skin/12anniversary/yanz1.png);
+  color: #ffffff;
+}
+#btnPhoneCode:pressed
+{
+	border-radius: 4px;
+  border-image:  url(./resources/ui/skin/12anniversary/yanz2.png);
+  color: #ffffff;
+}
+#btnPhoneLogin,#btn_updateMsgCode
+{
+  border-radius: 4px;
+  border-image:  url(./resources/ui/skin/12anniversary/anniu1.png);
+  border:none;
+  color: #ffffff;
+}
+#btnPhoneLogin:pressed,#btn_updateMsgCode:pressed
+{
+  border-radius: 4px;
+  border-image:  url(./resources/ui/skin/12anniversary/anniu2.png);
+  border:none;
+  color: #ffffff;
+}
+#lbError
+{
+  background-color: #ffffff;
+  border-radius: 2px;
+  background-color: #3a3c45;
+  color:#ffffff;
+}
+QLineEdit#leAccount
+{
+  border:none;
+  background-color: #ffffff;
+  color: #1f2328;
+border-radius: 4px;
+padding:8px;
+}
+#lePassword
+{
+  border:none;
+  background-color: #ffffff;
+  color: #1f2328;
+	border-top-left-radius:4px;
+border-bottom-left-radius:4px;
+padding:8px;
+}
+#btnVisble:hover
+{
+image: url(./resources/ui/skin/LoginPic/biyan2.png);
+}
+#btnVisble::checked
+{
+background-color: rgb(255, 255, 255);
+border:none;
+border-top-right-radius:4px;
+border-bottom-right-radius:4px;
+image: url(./resources/ui/skin/LoginPic/kejian.png);
+}
+#btnVisble::checked:hover
+{
+image: url(./resources/ui/skin/LoginPic/bukejian.png);
+}
+
+#btnVisble
+{
+min-height:34px;
+max-height:85px;
+background-color: rgb(255, 255, 255);
+border:none;
+border-top-right-radius:4px;
+border-bottom-right-radius:4px;
+image: url(./resources/ui/skin/LoginPic/biyan1.png);
+}
+QCheckBox#cbRemember{
+	color:#ffffff;
+	spacing: 3px;  
+}
+QCheckBox::indicator {width: 18px; height: 18px; }
+
+QCheckBox#cbRemember::indicator::unchecked {   
+	border-image: url(./resources/ui/skin/LoginPic/check11.png);
+}
+QCheckBox#cbRemember::indicator::checked { 
+	border-image: url(./resources/ui/skin/LoginPic/check22.png);
+}
+#btnFindPassword
+{
+  border:none;
+  color: #ffffff;
+
+}
+QPushButton#btnAccountLogin
+{
+  border-radius: 4px;
+  border-image:  url(./resources/ui/skin/12anniversary/anniu1.png);
+  border:none;
+  color: #ffffff;
+}
+QPushButton#btnAccountLogin:pressed
+{
+  border-radius: 4px;
+  border-image:  url(./resources/ui/skin/12anniversary/anniu2.png);
+  border:none;
+  color: #ffffff;
+}
+QLabel#lbError_2
+{
+  background-color: #ffffff;
+  border-radius: 2px;
+  background-color: #3a3c45;
+  color:#ffffff;
+}
+
+  

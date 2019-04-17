@@ -1,0 +1,5 @@
+设计TZKT登陆框
+1.使用的基类是QDialog
+2.使用qss资源  F:\tanzhouketang\TZKT\resources\ui\qss\login_widget_ui  这就是样式表 可以使用NOTEPAD查看
+
+3.拿到登陆界面的背景图片，并把它放在image资源文件夹内
